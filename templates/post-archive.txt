@@ -1,0 +1,9 @@
+Option 1: Older/Newer Buttons
+---
+
+For this method to work you would need to create a separate interface/webpage/web-form where an admin user can create and edit posts.  Editing a post will require a custom script to query the post being edited from the database and an interface/webpage will have to be made to use for the edit menu.  In order for that to work, each blog post has to get entered into some form of database to be queried to populate a webpage.  You would also need a script to create a template for an html page which would then be populated by the most recent blog posts from the database.  The read more button would also have to be connected to some script that creates a template for an html page which would be populated from a query to the database to retrieve the post that was requested.
+
+Option 2: Archive by Date
+---
+
+For this method to work you would also need a database to hold the posts but they can be ordered by year/month of posting.  Beside the most recent posts you can have a menu/dropdown to show the archived posts by date (most recent to least recent).  The read more button would still have to have a script that creates a template html page which will get populated by a query to the database to retrieve the post that was requested.  The menu/dropdown would just contain years then months, then dates during that month, each linked to the post(s) that were submitted on that day.
