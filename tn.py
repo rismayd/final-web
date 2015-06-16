@@ -37,7 +37,7 @@ def hello_world():
 def signin():
     return render_template('signin.html')
 
-@app.route('/', methods=["GET"])
+@app.route('/index.html', methods=["GET"])
 def home():
     return render_template('index.html')
 
