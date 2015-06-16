@@ -1,8 +1,9 @@
 from flask import Flask, request, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 app = Flask(__name__)
-#app.config["SQLALCHEMY_DATABASE_URI"]="mysql://root:poplar1@localhost:3306/market_foundations"
-app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///test.db"
+
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ['DATABASE_URL']
+
 db =SQLAlchemy(app)
 
 
@@ -19,7 +20,7 @@ class User(db.Model):
         return self.first_name
 
 @app.route('/signup.html', methods=["GET", "POST"])
-def hello_world(): 
+def hello_world():
     if request.method == "POST":
         if not User.query.filter_by(email=request.form.get("email")).first():
             u=User(email=request.form.get("email"),
@@ -32,27 +33,27 @@ def hello_world():
 
 
 @app.route('/signin.html', methods=["GET"])
-def signin(): 
+def signin():
     return render_template('signin.html')
 
 @app.route('/index.html', methods=["GET"])
-def home(): 
+def home():
     return render_template('index.html')
 
 @app.route('/about.html', methods=["GET"])
-def about(): 
+def about():
     return render_template('about.html')
 
 @app.route('/services.html', methods=["GET"])
-def services(): 
+def services():
     return render_template('services.html')
 
 @app.route('/contact.html', methods=["GET"])
-def contact(): 
+def contact():
     return render_template('contact.html')
 
 @app.route('/blog.html', methods=["GET"])
-def blog(): 
+def blog():
     return render_template('blog.html')
 
 if __name__ == '__main__':
