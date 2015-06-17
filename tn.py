@@ -33,9 +33,9 @@ def hello_world():
     return render_template('signup.html')
 
 
-@app.route('/signin.html', methods=["GET"])
-def signin():
-    return render_template('signin.html')
+# @app.route('/signin.html', methods=["GET"])
+# def signin():
+#     return render_template('signin.html')
 
 @app.route('/index.html', methods=["GET"])
 def home():
